@@ -1,0 +1,28 @@
+.aboutContainer{
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    border: 0px solid red;
+    width: 80.5%;
+    height: 75vh;
+    margin-left: 19.2%;
+    margin-top: 10%;
+    background-color: #6F4E37;
+    opacity: 90%;
+    flex-direction: column;
+    
+}
+
+p, h1{
+    color: white;
+    margin-left: 20px;
+}
+
+.aboutContainer p{
+    font-size: 4vh;
+    
+}
+.aboutContainer h1{
+    font-size: 5vh;
+    
+}
