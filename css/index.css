@@ -12,7 +12,9 @@ Dark Neutral: #1A1A1A
 Complementary: #FFD700
 */
 
-body{
+body{   
+    display: flex;
+    flex-direction: column;
     margin: 0;
     background-color: #F5F5F5;
 }
@@ -39,9 +41,14 @@ p {
     z-index: -10;
     width: 100%;
     height: 100%;
+    filter: brightness(50%);
     object-fit: cover;
 }
-
+.welcome-layer{    
+    justify-content: space-between;
+    display: flex;
+    margin: 0;
+}
 .sideViewLeft{
     display: flex;
     z-index: 10;
@@ -54,11 +61,11 @@ p {
 }
 .logoDisplay{
     display: flex;
-    height: 31vh;
+    height: 260px;
     width: auto;
 }
 .logoDisplay img{
-    height: 32.2vh;
+    height: 100%;
     width: auto;    
 }
 
@@ -129,4 +136,200 @@ p {
 .contacts a{
     text-decoration: none;
     color: #f5f5f569;
+}
+
+.sideViewRight{
+    display: flex;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    margin-left: 5%;
+    justify-content: center;
+}
+.specialText{
+    margin: 0 15px;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0 0 10px #D4A574;
+    color: #D4A574;
+}
+.normalText{
+    margin: 0;
+    color: #F5F5F5;
+    text-shadow: 0 0 20px #000000;
+}
+.Entrance h1{
+    font-size: 3em;
+    font-weight: 500;
+    display: inline-block;
+}
+.Entrance small{
+    display: block;
+    margin-top: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4em;
+    padding-left: 10%;
+    color: #b37f5b;
+    text-shadow: 0 0 20px #D4A574;
+}
+.scrollHereText{
+    color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+}
+.scrollHereText h1{
+    display: inline-block;
+    margin: 0;
+    transform: rotate(90deg);
+    color: #D4A574;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0 0 20px #D4A574;
+}
+.scrollHereText p{
+    margin: 0;
+    display: inline-block;
+    font-size: 1em;
+}
+.layer-1{
+    width: 100%;
+    display: flex;
+    background-color: #F5F5F5;
+    height: 150vh;
+    justify-content: center;
+    align-items: center;
+}
+.layer-1 p{
+    color: #00000069;
+}
+
+
+/*sidebar to topbar*/
+.sideViewLeft.movedUp{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    pointer-events: 0;
+}
+.sideViewLeft.movedUp .welcome-layer{
+    flex-direction: column;
+}
+.sideViewLeft.movedUp .logoDisplay{
+    height: 100%;
+    width: 24%;
+    padding-left: 2%;
+}
+.sideViewLeft.movedUp .logoDisplay img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.sideViewLeft.movedUp .navigationTab{
+    display: flex;
+    width: 100%;
+}
+.sideViewLeft.movedUp .navigationTab nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.sideViewLeft.movedUp .navigationTab nav a{
+    font-size: 1.3rem;
+    width: 15%;
+}
+.sideViewLeft.movedUp .contrastButton{
+    display: flex;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-left: 2%;
+    width: 36%;
+}
+.sideViewLeft.movedUp .contrastButton a{
+    padding: 8% 8%;
+    font-size: 1rem;
+}
+.sideViewLeft.movedUp .contacts{
+    display: none;
+}
+
+/*responsiveness tings*/
+@media (max-width: 1200px){
+    .welcome-layer{
+        flex-direction: column;
+    }
+    .sideViewLeft{
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .logoDisplay{
+        height: 100%;
+        width: 24%;
+        padding-left: 2%;
+    }
+    .logoDisplay img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .navigationTab{
+        display: flex;
+        width: 100%;
+    }
+    .navigationTab nav{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .navigationTab nav a{
+        font-size: 1.3rem;
+        width: 15%;
+    }
+
+    .contrastButton{
+        display: flex;
+        margin-top: 0%;
+        margin-right: 0%;
+        margin-left: 2%;
+        width: 36%;
+    }
+    .contrastButton a{
+        padding: 10% 8%;
+        font-size: 1rem;
+    }
+    .contacts{
+        display: none;
+    }
+    
+
+    .sideViewRight{
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        margin-top: 29%;
+        height: auto;
+        margin-bottom: 16%;
+    }
+    .Entrance{
+        margin-bottom: 3%;
+    }
+    .sideViewRight small{
+        padding: 0;
+        text-align: center;
+    }
 }
