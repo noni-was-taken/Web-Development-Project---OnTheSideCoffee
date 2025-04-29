@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>OnTheSide Admin</title>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="/images/cafeLogo.png" alt="">
+    </div>
+    <div class="layer-two">
+        <div class="l2-left">
+            <h1 class="title">Current Menu Display</h1>
+            <div class="content-boxes">
+                <div class="item-box">
+                    <img src="" alt="" class="item-img">
+                    <h1>Blueberry Fuego</h1>
+                    <p>$9.99</p>
+                </div>
+                <div class="item-box">
+                    <img src="" alt="" class="item-img">
+                    <h1>The Box</h1>
+                    <p>$7.35</p>
+                </div>
+                
+            </div>
+        </div>  
+        <div class="l2-right">
+            <nav>
+                <a onclick="popupOpen()">> Create</a>
+                <a href="">> Delete</a>
+                <a onclick="popupOpen()">> Edit</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="create-edit_popup">
+        <div class="popup-window">
+            <div class="title-popup">
+                <h1>EDIT</h1>
+            </div>
+            <div class="popup-content">
+                <div class="preview">
+
+                </div>
+                <div class="edit-menu">
+                    <div class="edit-top">
+                        <div class="form-container">
+                            <label for="ProdName">
+                                Product Name:
+                            </label>
+                            <input type="text" name="ProdName" id="">
+                        </div>
+                        <div class="form-container">
+                            <label for="ProdName">
+                                Price:
+                            </label>
+                            <input type="text" name="ProdName" id="">
+                        </div>
+                        <div class="form-container">
+                            <label for="ProdName">
+                                Image File: 
+                            </label>
+                            <input type="file" name="" id="" class="specialInfo">
+                        </div>
+                    </div>
+                    <div class="edit-confirm">
+                        <button class="goods" onclick="popupClose()">DONE</button>
+                        <button class="notgoods" onclick="popupCLose()">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function popupOpen(){
+            document.querySelector(`.create-edit_popup`).classList.add(`toggled`);
+        }
+        function popupClose(){
+            document.querySelector(`.create-edit_popup`).classList.remove(`toggled`);
+        }
+    </script>
+</body>
+</html>

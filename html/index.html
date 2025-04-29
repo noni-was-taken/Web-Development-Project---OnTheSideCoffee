@@ -57,22 +57,15 @@
         </div>
     </div>
     <div class="layer-1">
-        <p>
-           > input body here < 
-        </p>
+        <div class="welcome-message">
+            <div class="left-wm">
+
+            </div>
+            <div class="right-vm">
+                
+            </div>
+        </div>
     </div>
-
-    <script>
-        window.addEventListener('scroll', function(){
-            const header = document.querySelector('.sideViewLeft');
-            const scrollTriggerPx = window.innerHeight;
-
-            if(window.scrollY > scrollTriggerPx){
-                header.classList.add('movedUp');
-            } else {
-                header.classList.remove('movedUp');
-            }
-        });
-    </script>
+    <script src="index.js"></script>
     </body>
 </html>

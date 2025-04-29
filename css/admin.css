@@ -1,0 +1,252 @@
+/*
+Primary: #234777
+
+Secondary: #6F4E37
+
+Accent: #D4A574
+
+Neutral: #F5F5F5
+
+Dark Neutral: #1A1A1A
+
+Complementary: #FFD700
+*/
+
+*{
+    margin: 0;
+    /* font-family: "Merriweather", serif; */
+    font-family: "Quicksand", serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #234777;
+}
+body div{
+    display: flex;
+}
+
+.logo-container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 19vh;
+}
+
+.logo-container img{
+    height: 100%;
+    width: 32vh;
+    object-fit: cover;
+}
+
+.layer-two{
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.layer-two div{
+    border-radius: 5px;
+}
+
+.l2-left{
+    background-color: #F5F5F5;
+    height: 84%;
+    padding: 2%;
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.l2-right{
+    background-color: #F5F5F5;
+    height: auto;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 3.7em;
+    font-weight: 500;
+    color: #234777;
+}
+
+.l2-right nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-boxes{
+    height: 100%;
+    width: 100%;
+    padding: 5px; 
+    gap: 2%;
+    margin-top: 2%;
+}
+.item-box{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    height: 31vh;
+    width: 27vh;
+    border-radius: 11px !important;  
+    cursor: pointer;
+
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.127);
+}
+.item-box h1{
+    font-size: 2em;
+    font-weight: 400;
+}
+.item-box p{
+    font-family: "Merriweather", serif;
+    font-size: 1.7em;
+    letter-spacing: 2px;
+}
+.item-img{
+    border: 1px solid black;
+    height: 17vh;
+    width: 17vh;
+    margin-bottom: 5px;
+}
+
+.item-box:hover{
+    transition: box-shadow 0.1s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.347);
+}
+
+.item-box.pressed{
+    transition: box-shadow 0.1s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.347);
+}
+.l2-right nav{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 8px;
+}
+.l2-right nav a{
+    color: #234777;
+    font-size: 3.7em;
+    text-decoration: none;
+    width: 100%;
+    padding: 26px 0;
+    text-align: center;
+}
+
+.l2-right nav a:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.create-edit_popup{
+    z-index: 10;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.create-edit_popup.toggled{
+    display: flex !important;
+    background-color: rgba(0, 0, 0, 0.209);
+    backdrop-filter: blur(5px);
+}
+
+.popup-window{
+    height: 80%;
+    width: 80%;
+    background-color:#F5F5F5;
+    border-radius: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.329);
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+}
+.title-popup{
+    height: auto;
+    margin-top: 8px;
+}
+.title-popup h1{
+    font-family: "Merriweather", serif;
+    font-size: 3.6em;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+.popup-content{
+    height: 90%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.preview{
+    height: 100%;
+    width: 30%;
+}
+.edit-menu{
+    height: 100%;
+    width: 65%;
+    flex-direction: column;
+}
+.edit-top{
+    height: 70%;
+    flex-direction: column;
+    gap: 19%;
+    padding: 0 3%;
+    justify-content: center;
+}
+.form-container{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-container label{
+    font-size: 2em;
+}
+.form-container input{
+    height: 100%;
+    display:flex;
+    width: 73%;
+    background-color: #F5F5F5;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.specialInfo{
+    display: flex;
+    border-bottom: none !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-confirm{
+    height: 30%;
+    justify-content: center;
+    gap: 5%;
+    align-items: center;
+}
+
+.edit-confirm button{
+    width: 22vh;
+    height: 50%;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+.goods{
+    background-color: #234777;
+    color: #F5F5F5;
+}
+
+.notgoods{
+    background-color: #F5F5F5;
+    color: #234777;
+}
