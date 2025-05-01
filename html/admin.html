@@ -16,28 +16,18 @@
         <div class="l2-left">
             <h1 class="title">Current Menu Display</h1>
             <div class="content-boxes">
-                <div class="item-box">
-                    <img src="" alt="" class="item-img">
-                    <h1>Blueberry Fuego</h1>
-                    <p>$9.99</p>
+                <div class="cb-layer">
                 </div>
-                <div class="item-box">
-                    <img src="" alt="" class="item-img">
-                    <h1>The Box</h1>
-                    <p>$7.35</p>
-                </div>
-                
             </div>
         </div>  
         <div class="l2-right">
             <nav>
-                <a onclick="popupOpen()">> Create</a>
+                <a onclick="createItem()">> Create</a>
                 <a href="">> Delete</a>
                 <a onclick="popupOpen()">> Edit</a>
             </nav>
         </div>
     </div>
-
     <div class="create-edit_popup">
         <div class="popup-window">
             <div class="title-popup">
@@ -53,13 +43,14 @@
                             <label for="ProdName">
                                 Product Name:
                             </label>
-                            <input type="text" name="ProdName" id="">
+                            <input type="text" name="ProdName" id="" placeholder="name">
                         </div>
                         <div class="form-container">
                             <label for="ProdName">
                                 Price:
                             </label>
-                            <input type="text" name="ProdName" id="">
+                            <input type="text" name="ProdName" id="priceInput" placeholder="₱">
+                            <p>₱</p>
                         </div>
                         <div class="form-container">
                             <label for="ProdName">
@@ -70,19 +61,74 @@
                     </div>
                     <div class="edit-confirm">
                         <button class="goods" onclick="popupClose()">DONE</button>
-                        <button class="notgoods" onclick="popupCLose()">CANCEL</button>
+                        <button class="notgoods" onclick="popupClose()">CANCEL</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
+    <script>    
+        let selectedItem;
+
         function popupOpen(){
+            if(!selectedItem){
+                alert(`Please select an item first`);
+                return;
+            }
             document.querySelector(`.create-edit_popup`).classList.add(`toggled`);
         }
         function popupClose(){
             document.querySelector(`.create-edit_popup`).classList.remove(`toggled`);
+        }
+        function createItem(){
+            const item_containers = document.querySelector(`.content-boxes`);
+            const layers = item_containers.querySelectorAll(`.cb-layer`);
+            const itemsPerLayer = 5;
+            
+            let currentLayer;
+            if(layers.length === 0){
+                currentLayer = document.createElement(`div`);
+                currentLayer.className = `cb-layer`;
+                item_containers.appendChild(currentLayer);
+            }else{
+                currentLayer = layers[layers.length - 1];
+            }
+
+            if (currentLayer.querySelectorAll(`.item-box`).length >= itemsPerLayer){
+                currentLayer = document.createElement(`div`);
+                currentLayer.className = 'cb-layer';
+                item_containers.appendChild(currentLayer);
+            }
+
+            const itemBoxToAdd = document.createElement(`div`);
+            itemBoxToAdd.className = `item-box`;
+            itemBoxToAdd.innerHTML = `
+                <img src="" alt="" class="item-img">
+                <h1>Edit to Change</h1>
+                <p>$NULL</p>
+                <div class="availableContainer">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Is This Availble?</label>
+                </div>
+            `;
+            itemBoxToAdd.addEventListener(`click`, function(){
+                selectItem(this);
+            });
+            currentLayer.appendChild(itemBoxToAdd);
+
+            if(selectedItem){
+            selectedItem.classList.remove(`pressed`);
+            }
+        }
+        
+        function selectItem(itemElement){
+            if(selectedItem){
+            selectedItem.classList.remove(`pressed`);
+            }
+
+            selectedItem = itemElement;
+            selectedItem.classList.add(`pressed`);
         }
     </script>
 </body>
