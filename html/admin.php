@@ -103,7 +103,7 @@
                             <label for="ProdName">
                                 Image File: 
                             </label>
-                            <input type="file" name="" id="" class="specialInfo">
+                            <input type="file" name="image" id="imageUpload" class="specialInfo">
                         </div>
                         <div class="form-container">
                             <label for="availableCheckbox">
