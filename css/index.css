@@ -12,6 +12,9 @@ Dark Neutral: #1A1A1A
 Complementary: #FFD700
 */
 
+*{
+    margin: 0;
+}
 body{   
     display: flex;
     flex-direction: column;
@@ -61,6 +64,7 @@ p {
     flex-direction: column;
     align-items: center;
     box-shadow: 10px 0 20px rgba(0, 0, 0, 0.34);
+    justify-content: center;
 }
 .logoDisplay{
     display: flex;
@@ -200,26 +204,105 @@ p {
     width: 100%;
     display: flex;
     background-color: #F5F5F5;
-    height: 150vh;
+    height: auto;
     align-items: center;
     flex-direction: column;
 }
 .layer-1 p{
     color: #00000069;
 }
+
 .welcome-message{
-    margin-top: 5%;
+    padding-top: 7%;
     width: 100%;
-    height: 75vh;
-    background-color: rgba(0, 0, 0, 0.274);
-    justify-content: space-around;
-}
-.welcome-message div{
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.37);
-    width: 75vh;
+    height: 92vh;
+    align-items: center;
+    justify-content: center;
+    gap: 6%;
 }
 
+.left-wm{
+    width: 53%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.img-box{
+    height: 80%;
+    width: 99.4%;
+}
+.img-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.subimgs{
+    height: 17%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 5%;
+}
+.subimgs img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+.minidisplay{
+    width: auto;
+    height: 100%;
+    gap: 5%;
+}
+.button-back{
+    height: 100%;
+    width: auto;
+    align-items: center;
+    cursor: pointer;
+}
+.button-forward{
+    height: 100%;
+    width: auto;
+    align-items: center;
+    cursor: pointer;
+}
+.button-back h1{    
+    font-size: 5em;
+    font-weight: 600;
+}
+.button-forward h1{
+    font-size: 5em;
+    font-weight: 600;
+}
+.button-back h1:hover{
+    transition: color 0.3s ease;
+    color:  gray;
+}
+.button-forward h1:hover{
+    transition: color 0.3s ease;
+    color:  gray;
+}
+.right-wm{
+    width: 36%;
+    height: 100%;
+    flex-direction: column;
+    gap: 4.3%;
+}
+.right-wm h1{
+    font-size: 4.7em;
+    color: #234777;
+    font-weight: 700;
+    margin-top: 8%;
+    text-shadow: 0 0 20px #b37b5b6e;
+}
+.right-wm p {
+    color: black;
+    font-weight: 400;
+    padding: 0 40px;
+    font-size: 1.7em;
+    text-align: justify;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.39);
+}
 
 
 
@@ -280,7 +363,18 @@ p {
 .sideViewLeft.movedUp .contacts{
     display: none;
 }
-
+.footer{
+    margin-top: 2%;
+    background-color: #234777;
+    width: 100%;
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+}
+.footer h1{
+    color: #F5F5F5;
+    font-size: 1.2em;
+}
 /*responsiveness tings*/
 @media (max-width: 1200px){
     .welcome-layer{
