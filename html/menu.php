@@ -26,10 +26,7 @@
                             <div class="navigationTab">
                                 <nav>
                                     <a href="index.html">Home</a>
-                                    <a>Gallery</a>
-                                    <a>Menu</a>
-                                    <a>About Us</a>
-                                    <a>Merch</a>
+                                    <a href="menu.php">Menu</a>
                                 </nav>
                             </div>
 
