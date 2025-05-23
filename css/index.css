@@ -229,13 +229,30 @@ p {
     justify-content: space-between;
 }
 .img-box{
+    position: relative;
     height: 80%;
     width: 99.4%;
+    overflow: hidden;
 }
 .img-box img{
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.img-box img.active{
+    opacity: 1;
+}
+.minidisplay img{
+    cursor: pointer;
+    transition: filter 0.3 ease;
+}
+.minidisplay img:hover{
+    filter: brightness(1) !important;
 }
 .subimgs{
     height: 17%;
@@ -444,5 +461,63 @@ p {
     .sideViewRight small{
         padding: 0;
         text-align: center;
+    }
+
+    .welcome-message {
+    flex-direction: column;
+    height: auto;
+    padding-top: 20%;
+    gap: 4%;
+    }
+
+    .left-wm,
+    .right-wm {
+        width: 90%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .right-wm h1 {
+        font-size: 2.5em;
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .right-wm p {
+        padding: 0 20px;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .img-box {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .subimgs {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .subimgs img {
+        height: 60px;
+        width: auto;
+    }
+
+    .button-back h1,
+    .button-forward h1 {
+        font-size: 3em;
+    }
+
+    .layer-1 {
+        padding: 0 5%;
+        text-align: center;
+    }
+
+    .layer-1 p {
+        font-size: 1em;
+        padding: 10px;
     }
 }
