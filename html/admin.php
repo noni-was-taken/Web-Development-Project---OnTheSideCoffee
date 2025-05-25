@@ -90,10 +90,16 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                 <h1>EDIT</h1>
             </div>
             <div class="popup-content">
-                <div class="preview">
 
-                </div>
-                <div class="edit-menu">
+                    <div class="preview">
+                        <img id="preview-img" src="" alt="Preview Image" class="item-img" >
+                        <h2 id="preview-name">Name Preview</h2>
+                        <p id="preview-price">₱0.00</p>
+                    </div>
+
+
+
+            <div class="edit-menu">
                     <div class="edit-top">
                         <div class="form-container">
                             <label for="ProdName">
@@ -103,7 +109,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
                         </div>
                         <div class="form-container">
                             <label for="ProdName">
-                                Price:
+                                Price:  
                             </label>
                             <input type="text" name="ProdName" id="priceInput" placeholder="₱">
                             <p>₱</p>
@@ -130,6 +136,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
         </div>
     </div>
 
+
     <script>    
         let selectedItem;
         let selectedItemId;
@@ -141,6 +148,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
             }
 
         // get item details
+        
         selectedItemId = selectedItem.getAttribute('data-id');
         const itemName = selectedItem.querySelector('h1').textContent;
         const itemPrice = selectedItem.querySelector('p').textContent;
@@ -153,6 +161,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
         const fileInput = document.querySelector('.popup-window input[type="file"]');
         const previewDiv = document.querySelector('.preview');
 
+        
         nameInput.value = itemName;
     
         // Clean price (remove ₱ or $ if present)
@@ -161,6 +170,32 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     
     
         document.querySelector('.create-edit_popup').classList.add('toggled');
+
+        
+        document.getElementById('preview-img').src = itemImg;
+        document.getElementById('preview-name').textContent = itemName;
+        document.getElementById('preview-price').textContent = '₱' + cleanPrice;
+
+        document.querySelector('.popup-window input[placeholder="name"]').addEventListener('input', function(e) {
+            document.getElementById('preview-name').textContent = e.target.value || 'Name Preview';
+        });
+
+        document.querySelector('#priceInput').addEventListener('input', function(e) {
+            const price = e.target.value.replace(/[^\d.]/g, '');
+            document.getElementById('preview-price').textContent = '₱' + (price || '0.00');
+        });
+
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('preview-img').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
 
         }
 
